@@ -78,5 +78,27 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+app.get('/aboutUs', async (req, res) => {
+  try {
+    const aboutData = {
+      name: "Chris Bobadilla",
+      description: "Hi there! I'm Chris, a senior at NYU. I am currently on the path to obtain a BA in Neural Science and Computer Science, and a minor in Web Programming and Applications. In terms of my personal life, I was born and raised in Miami, Fl, I'm latino, and I love music & singing.",
+      image: "/images/chris.JPG"
+    };
+    res.json({
+      about: aboutData,
+      status: 'all good',
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve about information',
+    });
+  }
+});
+
+
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
