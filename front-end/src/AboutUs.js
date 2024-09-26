@@ -17,13 +17,13 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div>
+    <div className="about-container">
       <h1>About Us</h1>
       {aboutData.name && (
         <div>
           <h2>{aboutData.name}</h2>
           <p>{aboutData.description}</p>
-          {aboutData.image && <img src={aboutData.image} alt="About Me" />}
+          {aboutData.image && <img className="about-image" src={aboutData.image} alt="About Me" />}
         </div>
       )}
     </div>
